@@ -1,0 +1,104 @@
+:root {
+  --accent: #6ea8fe;
+  --bg-1: #0b0f17;
+  --bg-2: #0f1522;
+  --text-1: #e6e6e6;
+  --text-2: #9aa4b2;
+  --card: #121826aa;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 10% -10%, #1b2a4a66, transparent),
+              radial-gradient(1000px 700px at 100% 10%, #3b2a5f44, transparent),
+              var(--bg-1);
+  color: var(--text-1);
+  scroll-behavior: smooth;
+}
+
+.text-accent { color: var(--accent) !important; }
+.accent { color: var(--accent) }
+
+.py-7 { padding-top: 5rem; padding-bottom: 5rem; }
+
+.glass-nav {
+  backdrop-filter: saturate(180%) blur(14px);
+  background: linear-gradient(180deg, rgba(18,24,38,0.9), rgba(18,24,38,0.6));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar .nav-link {
+  color: var(--text-2);
+}
+.navbar .nav-link.active, .navbar .nav-link:hover { color: var(--text-1); }
+
+.gradient-bg {
+  position: absolute; inset: -10% -10% 0 -10%;
+  background: radial-gradient(600px 300px at 0% 0%, #263a7a77, transparent),
+              radial-gradient(800px 400px at 100% 0%, #6ea8fe33, transparent);
+  z-index: 0;
+}
+
+header .container { z-index: 1; }
+.hero-card img { object-fit: cover; width: 100%; height: 420px; }
+.hero-card { border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #0f1522; }
+
+.scroll-down { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: var(--text-2); font-size: 1.5rem; }
+.scroll-down:hover { color: var(--text-1); }
+
+.section-title { font-weight: 800; margin-bottom: 1rem; }
+
+.stat-card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); padding: 1.25rem; border-radius: 0.75rem; }
+.stat-card .stat { font-size: 2rem; font-weight: 800; color: var(--text-1); }
+.stat-card .label { color: var(--text-2); }
+
+.bg-raise { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0)); }
+
+.skill-card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); padding: 1.25rem; border-radius: 0.75rem; height: 100%; }
+.skill-card i { font-size: 1.6rem; color: var(--accent); }
+.skill-card h5 { margin-top: .5rem; }
+.progress-card { margin-top: 1.25rem; }
+.progress { height: 10px; background: rgba(255,255,255,0.08); }
+.progress-bar { background: linear-gradient(90deg, var(--accent), #b197fc); }
+
+.project-card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.75rem; overflow: hidden; height: 100%; transition: transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+.project-img { height: 180px; overflow: hidden; }
+.project-img img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.1) contrast(1.05); }
+.project-body { padding: 1rem 1.25rem 1.25rem; }
+
+.social-links a { color: var(--text-2); font-size: 1.25rem; }
+.social-links a:hover { color: var(--text-1); }
+
+footer { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); }
+
+/* Light theme overrides */
+[data-bs-theme="light"] {
+  --bg-1: #f6f7fb;
+  --bg-2: #ffffff;
+  --text-1: #0b1020;
+  --text-2: #5b6678;
+  --card: #ffffffcc;
+}
+[data-bs-theme="light"] body { background: linear-gradient(180deg, #fff, #f6f7fb); }
+[data-bs-theme="light"] .glass-nav { background: rgba(255,255,255,0.75); border-bottom-color: rgba(0,0,0,0.06); }
+
+/* Utilities */
+.shadow-sm { box-shadow: 0 6px 16px rgba(0,0,0,0.25) !important; }
+
+/* Form styles */
+.form-control, .form-select { background-color: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: var(--text-1); }
+.form-control:focus { background-color: rgba(255,255,255,0.08); border-color: var(--accent); box-shadow: 0 0 0 .25rem #6ea8fe22; }
+.btn-primary { background: linear-gradient(90deg, var(--accent), #b197fc); border: none; }
+.btn-outline-light { border-color: rgba(255,255,255,0.25); color: var(--text-1); }
+.btn-outline-light:hover { background: rgba(255,255,255,0.1); }
+
+/* Animations */
+@keyframes fadeInUp { from { opacity: 0; transform: translate3d(0, 20px, 0); } to { opacity: 1; transform: none; } }
+header h1, header p.lead, header .btn { animation: fadeInUp .6s ease both; }
+header h1 { animation-delay: .1s }
+header p.lead { animation-delay: .2s }
+header .btn { animation-delay: .3s }
+
+
+
